@@ -1,5 +1,6 @@
 package com.javaweatherapp.data.repository;
 
+import com.javaweatherapp.data.local.dao.GetWeatherDao;
 import com.javaweatherapp.data.response.GetWeatherItemResponse;
 import com.javaweatherapp.data.service.GetWeatherService;
 import com.javaweatherapp.domain.model.WeatherInfo;
@@ -14,9 +15,11 @@ import javax.inject.Inject;
 public class GetWeatherRepositoryImpl implements GetWeatherRepository {
 
   private final GetWeatherService service;
+  private final GetWeatherDao dao;
   @Inject
-  public GetWeatherRepositoryImpl(GetWeatherService service) {
+  public GetWeatherRepositoryImpl(GetWeatherService service, GetWeatherDao dao) {
     this.service = service;
+    this.dao = dao;
   }
 
   @Override

@@ -45,4 +45,7 @@ dependencies {
   implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
   implementation("com.squareup.okhttp3:okhttp:4.11.0")
   implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+  implementation("androidx.room:room-runtime:2.6.1")
+  annotationProcessor("androidx.room:room-compiler:2.6.1")
+  implementation("androidx.room:room-rxjava3:2.6.1")
 }
