@@ -3,13 +3,39 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     >
 
   <TextView
-      android:layout_width="wrap_content"
+      android:id="@+id/textCityName"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Hello, JavaWeatherApp!"
-      android:textSize="24sp"
+      android:textStyle="bold"
+      android:textSize="18sp"
+      android:textColor="#000000"
+      android:paddingTop="24dp"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      android:gravity="start"
       />
+
+  <TextView
+      android:id="@+id/textCountryName"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      android:textSize="18sp"
+      android:textColor="#000000"
+      android:paddingTop="24dp"
+      android:paddingStart="16dp"
+      android:paddingEnd="16dp"
+      android:gravity="start"
+      />
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerView"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      />
+
 </LinearLayout>
