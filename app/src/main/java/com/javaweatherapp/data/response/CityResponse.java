@@ -1,8 +1,8 @@
 package com.javaweatherapp.data.response;
 
 public class CityResponse {
-  public String name;
-  public String country;
+  private String name;
+  private String country;
 
   public CityResponse(String name, String country) {
     this.name = name;

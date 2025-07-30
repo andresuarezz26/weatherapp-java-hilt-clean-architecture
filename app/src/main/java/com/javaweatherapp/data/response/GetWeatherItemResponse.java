@@ -3,27 +3,27 @@ package com.javaweatherapp.data.response;
 import java.util.List;
 
 public class GetWeatherItemResponse {
-  public MainResponse mainResponse;
-  public List<WeatherInfo> weather;
+  private MainResponse main;
+  private List<WeatherInfoResponse> weather;
 
-  public GetWeatherItemResponse(MainResponse mainResponse, List<WeatherInfo> weather) {
-    this.mainResponse = mainResponse;
+  public GetWeatherItemResponse(MainResponse mainResponse, List<WeatherInfoResponse> weather) {
+    this.main = mainResponse;
     this.weather = weather;
   }
 
-  public MainResponse getMainResponse() {
-    return mainResponse;
+  public MainResponse getMain() {
+    return main;
   }
 
-  public void setMainResponse(MainResponse mainResponse) {
-    this.mainResponse = mainResponse;
+  public void setMain(MainResponse main) {
+    this.main = main;
   }
 
-  public List<WeatherInfo> getWeather() {
+  public List<WeatherInfoResponse> getWeather() {
     return weather;
   }
 
-  public void setWeather(List<WeatherInfo> weather) {
+  public void setWeather(List<WeatherInfoResponse> weather) {
     this.weather = weather;
   }
 }

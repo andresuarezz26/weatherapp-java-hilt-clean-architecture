@@ -1,6 +1,6 @@
 package com.javaweatherapp.data.di;
 
-import com.javaweatherapp.data.GetWeatherRepositoryImpl;
+import com.javaweatherapp.data.repository.GetWeatherRepositoryImpl;
 import com.javaweatherapp.domain.repository.GetWeatherRepository;
 import dagger.Binds;
 import dagger.Module;

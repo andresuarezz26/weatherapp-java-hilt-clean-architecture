@@ -3,12 +3,12 @@ package com.javaweatherapp.data.response;
 import java.util.List;
 
 public class GetWeatherResponse {
-  public List<GetWeatherItemResponse> list;
-  public CityResponse cityResponse;
+  private List<GetWeatherItemResponse> list;
+  private CityResponse city;
 
   public GetWeatherResponse(List<GetWeatherItemResponse> list, CityResponse cityResponse) {
     this.list = list;
-    this.cityResponse = cityResponse;
+    this.city = cityResponse;
   }
 
   public List<GetWeatherItemResponse> getList() {
@@ -19,11 +19,11 @@ public class GetWeatherResponse {
     this.list = list;
   }
 
-  public CityResponse getCityResponse() {
-    return cityResponse;
+  public CityResponse getCity() {
+    return city;
   }
 
-  public void setCityResponse(CityResponse cityResponse) {
-    this.cityResponse = cityResponse;
+  public void setCity(CityResponse city) {
+    this.city = city;
   }
 }

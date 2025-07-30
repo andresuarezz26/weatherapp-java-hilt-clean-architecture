@@ -1,10 +1,10 @@
 package com.javaweatherapp.data.response;
 
 public class MainResponse {
-  public double temp;
-  public double temp_min;
-  public double temp_max;
-  public int humidity;
+  private double temp;
+  private double temp_min;
+  private double temp_max;
+  private int humidity;
 
   public MainResponse(double temp, double temp_min, double temp_max, int humidity) {
     this.temp = temp;

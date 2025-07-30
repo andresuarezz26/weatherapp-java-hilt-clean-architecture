@@ -19,4 +19,16 @@ public class MainActivity extends AppCompatActivity {
 
     mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
   }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    mainViewModel.executeUseCase();
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    mainViewModel.dispose();
+  }
 }

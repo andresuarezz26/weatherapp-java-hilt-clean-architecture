@@ -1,10 +1,10 @@
 package com.javaweatherapp.data.response;
 
-public class WeatherInfo {
-  public String main;
-  public String description;
+public class WeatherInfoResponse {
+  private String main;
+  private String description;
 
-  public WeatherInfo(String main, String description) {
+  public WeatherInfoResponse(String main, String description) {
     this.main = main;
     this.description = description;
   }
