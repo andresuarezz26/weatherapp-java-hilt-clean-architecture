@@ -2,9 +2,7 @@ package com.javaweatherapp.presentation;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.widget.TextView;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.javaweatherapp.R;
@@ -18,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 
 @AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
