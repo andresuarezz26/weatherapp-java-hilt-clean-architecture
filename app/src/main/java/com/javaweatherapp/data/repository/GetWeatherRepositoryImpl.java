@@ -39,7 +39,11 @@ public class GetWeatherRepositoryImpl implements GetWeatherRepository {
               return Single.just(weatherInfo);
           }
 
-          // TODO: Remove the harcoded API key here
+          /** TODO: Move this to local.properties
+           *  To facilitate the set up of the project this api key will be keeped harcoded here
+           *  In a production environment, this must be stored on local.properties and accessed via
+           *  BuildConfig.
+           */
           return service.invoke(lat, lon, cnt, "0e8478feb806153aa83809db7b18dc21")
               .subscribeOn(Schedulers.io())
               .map(response -> {
