@@ -8,7 +8,7 @@ import io.reactivex.rxjava3.core.Single;
 import javax.inject.Inject;
 
 @ViewModelScoped
-public class GetWeatherUseCase {
+public class GetWeatherUseCase implements IGetWeatherUseCase{
 
   public static class Params {
     public final double lat;
@@ -29,6 +29,7 @@ public class GetWeatherUseCase {
     this.repository = repository;
   }
 
+  @Override
   public Single<WeatherInfo> execute(Params params)  {
     return repository.invoke(params.lat, params.lon, params.cnt);
   }

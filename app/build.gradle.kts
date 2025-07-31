@@ -50,4 +50,9 @@ dependencies {
   implementation("androidx.room:room-runtime:2.6.1")
   annotationProcessor("androidx.room:room-compiler:2.6.1")
   implementation("androidx.room:room-rxjava3:2.6.1")
+  testImplementation("junit:junit:4.13.2")
+  testImplementation("org.mockito:mockito-core:4.8.1")
+  testImplementation("androidx.arch.core:core-testing:2.2.0")
+  testImplementation("org.mockito:mockito-inline:4.8.1")
+
 }

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.javaweatherapp.domain.model.WeatherInfo;
 import com.javaweatherapp.domain.usecase.GetWeatherUseCase;
+import com.javaweatherapp.domain.usecase.IGetWeatherUseCase;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
@@ -13,12 +14,12 @@ import javax.inject.Inject;
 @HiltViewModel
 public class MainViewModel extends ViewModel {
 
-  private final GetWeatherUseCase getWeatherUseCase;
-  private final CompositeDisposable composite = new CompositeDisposable();
+  private final IGetWeatherUseCase getWeatherUseCase;
+  final CompositeDisposable composite = new CompositeDisposable();
 
   public final MutableLiveData<WeatherInfo> weatherInfo = new MutableLiveData<>();
   @Inject
-  public MainViewModel(GetWeatherUseCase getWeatherUseCase) {
+  public MainViewModel(IGetWeatherUseCase getWeatherUseCase) {
     this.getWeatherUseCase = getWeatherUseCase;
   }
 
