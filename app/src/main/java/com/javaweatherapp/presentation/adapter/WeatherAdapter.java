@@ -40,21 +40,23 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
   }
 
   static class WeatherViewHolder extends RecyclerView.ViewHolder {
-    TextView textTemp, textTempMin, textTempMax, textDescription;
+    TextView textTemp, textTempMin, textTempMax, textDescription, textDate;
 
     WeatherViewHolder(@NonNull View itemView) {
       super(itemView);
+      textDate = itemView.findViewById(R.id.textDate);
       textTemp = itemView.findViewById(R.id.textTemp);
       textTempMin = itemView.findViewById(R.id.textTempMin);
       textTempMax = itemView.findViewById(R.id.textTempMax);
       textDescription = itemView.findViewById(R.id.textDescription);
+
     }
 
     void bind(WeatherInfoItem item) {
-      textTemp.setText("Temperature: " + item.getTemp());
-      textTempMin.setText("Minimun temperature: " + item.getTempMin());
-      textTempMax.setText("Maximum temperature: " + item.getTempMax());
-      textDescription.setText(""); // No description in WeatherInfoItem currently
+      textDate.setText(item.getDay());
+      textTemp.setText("Temperature: " + String.format("%.2f", item.getTemp()) + "°F");
+      textTempMin.setText("Minimun temperature: " + String.format("%.2f",item.getTempMin())+ "°F");
+      textTempMax.setText("Maximum temperature: " + String.format("%.2f",item.getTempMax())+ "°F");
     }
   }
 }

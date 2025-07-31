@@ -22,4 +22,6 @@ public class WeatherInfoItemEntity {
   public String country;
 
   public long lastUpdated;
+
+  public String dateTimeText;
 }

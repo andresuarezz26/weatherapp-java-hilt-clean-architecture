@@ -1,5 +1,7 @@
 package com.javaweatherapp.data.response;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import java.util.List;
 
 public class GetWeatherResponse {
@@ -11,6 +13,7 @@ public class GetWeatherResponse {
     this.city = cityResponse;
   }
 
+  @Nullable
   public List<GetWeatherItemResponse> getList() {
     return list;
   }
@@ -19,6 +22,7 @@ public class GetWeatherResponse {
     this.list = list;
   }
 
+  @Nullable
   public CityResponse getCity() {
     return city;
   }

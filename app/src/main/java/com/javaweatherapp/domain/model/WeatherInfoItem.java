@@ -2,11 +2,11 @@ package com.javaweatherapp.domain.model;
 
 public class WeatherInfoItem {
 
-  public double temp;
-  public double tempMin;
-  public double tempMax;
-  public int humidity;
-
+  private double temp;
+  private double tempMin;
+  private double tempMax;
+  private int humidity;
+  private String day;
   public double getTemp() {
     return temp;
   }
@@ -37,5 +37,13 @@ public class WeatherInfoItem {
 
   public void setHumidity(int humidity) {
     this.humidity = humidity;
+  }
+
+  public String getDay() {
+    return day;
+  }
+
+  public void setDay(String day) {
+    this.day = day;
   }
 }

@@ -1,5 +1,7 @@
 package com.javaweatherapp.data.response;
 
+import androidx.annotation.Nullable;
+
 public class CityResponse {
   private String name;
   private String country;
@@ -17,6 +19,7 @@ public class CityResponse {
     this.name = name;
   }
 
+  @Nullable
   public String getCountry() {
     return country;
   }
