@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase;
 import com.javaweatherapp.data.local.dao.GetWeatherDao;
 import com.javaweatherapp.data.local.entity.WeatherInfoItemEntity;
 
-@Database(entities = { WeatherInfoItemEntity.class }, version = 1, exportSchema = false)
+@Database(entities = { WeatherInfoItemEntity.class }, version = 4, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
   public abstract GetWeatherDao getWeatherDao();
 }

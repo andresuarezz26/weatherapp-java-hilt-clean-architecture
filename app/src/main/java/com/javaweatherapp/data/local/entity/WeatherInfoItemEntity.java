@@ -14,6 +14,12 @@ public class WeatherInfoItemEntity {
   public double tempMax;
   public int humidity;
 
+  public double latitute;
+
+  public double longitude;
+
   public String cityName;
   public String country;
+
+  public long lastUpdated;
 }

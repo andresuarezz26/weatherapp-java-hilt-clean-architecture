@@ -17,9 +17,9 @@ public interface GetWeatherDao {
   @Query("SELECT * FROM weather_info_items")
   Single<List<WeatherInfoItemEntity>> getAllWeatherItems();
 
-  @Query("SELECT * FROM weather_info_items WHERE cityName = :city AND country = :country")
-  Single<List<WeatherInfoItemEntity>> getWeatherItemsByCityAndCountry(String city, String country);
+  @Query("SELECT * FROM weather_info_items WHERE latitute = :lat AND longitude = :lon")
+  Single<List<WeatherInfoItemEntity>> getWeatherItemsByLatitudeAndLongitude(double lat, double lon);
 
-  @Query("SELECT * FROM weather_info_items WHERE weatherInfoId = :weatherInfoId")
-  Single<List<WeatherInfoItemEntity>> getWeatherItemsByParent(long weatherInfoId);
+  @Query("DELETE FROM weather_info_items WHERE cityName = :city AND country = :country")
+  void deleteWeatherItemsByCityAndCountry(String city, String country);
 }
