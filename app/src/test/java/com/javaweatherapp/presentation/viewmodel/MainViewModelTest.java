@@ -3,7 +3,7 @@ package com.javaweatherapp.presentation.viewmodel;
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 import com.javaweatherapp.domain.model.WeatherInfo;
 import com.javaweatherapp.domain.usecase.GetWeatherUseCase;
-import com.javaweatherapp.domain.usecase.IGetWeatherUseCase;
+import com.javaweatherapp.domain.usecase.GetWeatherUseCaseImpl;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -24,7 +24,7 @@ public class MainViewModelTest {
   public TestRule rule = new InstantTaskExecutorRule();
 
   @Mock
-  private IGetWeatherUseCase getWeatherUseCase;
+  private GetWeatherUseCase getWeatherUseCase;
 
   @InjectMocks
   private MainViewModel viewModel;
@@ -48,7 +48,7 @@ public class MainViewModelTest {
   @Test
   public void when_fetchWeatherInfo_then_liveDataUpdatedWithCorrectData() {
     WeatherInfo mockWeatherInfo = new WeatherInfo();
-    when(getWeatherUseCase.execute(any(GetWeatherUseCase.Params.class)))
+    when(getWeatherUseCase.execute(any(GetWeatherUseCaseImpl.Params.class)))
         .thenReturn(Single.just(mockWeatherInfo));
 
     viewModel.fetchWeatherInfo(3.2, 76, 7);
@@ -62,7 +62,7 @@ public class MainViewModelTest {
     WeatherInfo initialWeatherInfo = new WeatherInfo();
     viewModel.weatherInfo.setValue(initialWeatherInfo);
 
-    when(getWeatherUseCase.execute(any(GetWeatherUseCase.Params.class)))
+    when(getWeatherUseCase.execute(any(GetWeatherUseCaseImpl.Params.class)))
         .thenReturn(Single.error(new RuntimeException("Server error")));
     viewModel.fetchWeatherInfo(1, 2, 3);
 
