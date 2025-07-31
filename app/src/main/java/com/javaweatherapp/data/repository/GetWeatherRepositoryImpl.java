@@ -39,6 +39,7 @@ public class GetWeatherRepositoryImpl implements GetWeatherRepository {
               return Single.just(weatherInfo);
           }
 
+          // TODO: Remove the harcoded API key here
           return service.invoke(lat, lon, cnt, "0e8478feb806153aa83809db7b18dc21")
               .subscribeOn(Schedulers.io())
               .map(response -> {
@@ -50,9 +51,6 @@ public class GetWeatherRepositoryImpl implements GetWeatherRepository {
                 dao.insertWeatherItems(entities);
                 return mapResponseToDomain(response);
               });
-        }).onErrorResumeNext(throwable -> {
-          // Handle the error here, for example, by returning a default value or logging the error
-          return Single.error(throwable);
         });
   }
 

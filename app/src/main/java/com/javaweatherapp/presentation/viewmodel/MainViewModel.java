@@ -22,13 +22,11 @@ public class MainViewModel extends ViewModel {
     this.getWeatherUseCase = getWeatherUseCase;
   }
 
-  public void fetchWeatherInfo() {
-    composite.add(
-        getWeatherUseCase.execute(new GetWeatherUseCase.Params(3.2,76, 7))
+  public void fetchWeatherInfo(double lat, double lon, int cnt) {
+    composite.add(getWeatherUseCase.execute(new GetWeatherUseCase.Params(lat, lon, cnt))
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(weatherInfo::setValue,
-            throwable -> Log.e("TAG", "Error getting weather", throwable)
-        ));
+            throwable -> Log.e("TAG", "Error getting weather", throwable)));
   }
 
   public void dispose() {

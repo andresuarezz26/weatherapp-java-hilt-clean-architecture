@@ -43,6 +43,8 @@ dependencies {
   implementation("io.reactivex.rxjava3:rxjava:3.1.7")
   implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
   implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
+  implementation("com.google.android.gms:play-services-location:21.0.1")
+
   implementation("com.squareup.okhttp3:okhttp:4.11.0")
   implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
   implementation("androidx.room:room-runtime:2.6.1")
